@@ -5,8 +5,6 @@ import { Card } from "../components/Card";
 export default function Home() {
   const [quote, setQuote] = useState([]);
   const [error, setError] = useState(null);
-  const [emoji, setEmoji] = useState();
-  
   useEffect(() => {
     //First request
     axios
@@ -19,14 +17,14 @@ export default function Home() {
       .catch((error) => {
         setError(error.message);
       })
-
-
+    
   }, []);
+
   
   return (
 <div className="row">
       {quote.map((quote,key) => (
-        <Card text={quote['text']} author={quote['author']} key={key}></Card>
+        <Card text={quote['text']} author={quote['author'] } key={key}></Card>
       ))}
     </div>
     )
