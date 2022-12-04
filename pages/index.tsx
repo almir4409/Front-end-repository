@@ -11,21 +11,24 @@ export default function Home() {
       .get('https://type.fit/api/quotes')
       .then((response) => {
         const quotes = response.data;
+ 
 
-        setQuote(quotes);
+        setQuote(quotes.slice(0,21));
       })
       .catch((error) => {
         setError(error.message);
       })
+
+      
     
   }, []);
 
-  
   return (
 <div className="row">
-      {quote.map((quote,key) => (
+     {quote.map((quote,key) => (
         <Card text={quote['text']} author={quote['author'] } key={key}></Card>
-      ))}
+      ))} 
+
     </div>
     )
      

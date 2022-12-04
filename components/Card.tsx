@@ -3,9 +3,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function Card(props: {text: string, author: string}): JSX.Element {
-   //There are to many request in the api and the server is crushing but the logic i think is this:
-  //const [emoji, setEmoji] = useState("");
-  //let name = props.author.substring(0,20);
+ //  There are to many request in the api and the server is crushing but the logic i think is this:
+  // const [emoji, setEmoji] = useState("");
   // function revealGender(name : string){
   //   axios.get(`https://api.genderize.io?name=${name}`)
   //   .then(response=>{
@@ -19,7 +18,7 @@ export function Card(props: {text: string, author: string}): JSX.Element {
   //   })
   // }
   // useEffect(()=>{
-  //   revealGender(`${props.author}`)
+  //   revealGender(`${props.author.split(' ').slice(0, -1).join(' ')}`)
   // })
   return (
 <div className="card">
